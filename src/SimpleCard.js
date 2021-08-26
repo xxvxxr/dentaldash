@@ -31,52 +31,37 @@ export default function SimpleCard() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root} xs={12}>
-        <Grid container item 
-        className={classes.gridContainer}
-        spacing={2}
-        direction="column"
-        alignItems="center"
-        justify="center"
-        // xs={12}
-        >
-            <Card className={classes.body}>
-            <CardContent>
-                <Typography variant="h5" component="h2">
-                Doctor
-                </Typography>
-                <Typography className={classes.pos} color="textSecondary">
-                adjective
-                </Typography>
-                <Typography variant="body2" component="p">
-                well meaning and kindly.
-                <br />
-                {'"a benevolent smile"'}
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Button size="small">Learn More</Button>
-            </CardActions>
-            </Card>
-            <Card className={classes.body}>
-            <CardContent>
-                <Typography variant="h5" component="h2">
-                Doctor
-                </Typography>
-                <Typography className={classes.pos} color="textSecondary">
-                adjective
-                </Typography>
-                <Typography variant="body2" component="p">
-                well meaning and kindly.
-                <br />
-                {'"a benevolent smile"'}
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Button size="small">Learn More</Button>
-            </CardActions>
-            </Card>
-        </Grid>
-    </div>
-  )
+    content.map( (content, indx) => 
+    ((
+      console.log(content),
+      <div className={classes.root} xs={12} key={indx}>
+      <Grid container item 
+      className={classes.gridContanier}
+      direction="column"
+      justifyContent="center"
+      alignItems="center"
+      >
+          <Card className={classes.body}>
+          <CardContent>
+              <Typography variant="h5" component="h2">
+              {/* {content} */}
+              </Typography>
+              <Typography className={classes.pos} color="textSecondary">
+              adjective
+              </Typography>
+              <Typography variant="body2" component="p">
+              well meaning and kindly.
+              <br />
+              {'"a benevolent smile"'}
+              </Typography>
+          </CardContent>
+          <CardActions>
+              <Button size="small">Learn More</Button>
+          </CardActions>
+          </Card>
+      </Grid>
+  </div>
+
+)))
+)
 }
