@@ -8,21 +8,23 @@ import Typography from '@material-ui/core/Typography';
 import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles({
-    gridContanier:{
-        backgroundColor: 'red'
+    gridContainer:{
+
     },
     root:{
         display: 'flex', 
         alignSelf: 'center', 
-        backgroundColor: 'red'
-
+        width: '100%'
     },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
+    title: {
+      fontSize: 14,
+    },
+    pos: {
+      marginBottom: 12,
+    },
+    body: {
+      margin: '16px 0'
+    }
 });
 
 export default function SimpleCard() {
@@ -31,12 +33,31 @@ export default function SimpleCard() {
   return (
     <div className={classes.root} xs={12}>
         <Grid container item 
-        className={classes.gridContanier}
+        className={classes.gridContainer}
+        spacing={2}
         direction="column"
-        justifyContent="center"
         alignItems="center"
+        justify="center"
         // xs={12}
         >
+            <Card className={classes.body}>
+            <CardContent>
+                <Typography variant="h5" component="h2">
+                Doctor
+                </Typography>
+                <Typography className={classes.pos} color="textSecondary">
+                adjective
+                </Typography>
+                <Typography variant="body2" component="p">
+                well meaning and kindly.
+                <br />
+                {'"a benevolent smile"'}
+                </Typography>
+            </CardContent>
+            <CardActions>
+                <Button size="small">Learn More</Button>
+            </CardActions>
+            </Card>
             <Card className={classes.body}>
             <CardContent>
                 <Typography variant="h5" component="h2">
