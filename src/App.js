@@ -1,14 +1,25 @@
-import {makeStyles, CssBaseline} from '@material-ui/core'
+import {makeStyles, CssBaseline, Fab} from '@material-ui/core'
 import Header from './Header'
 import SimpleCard from './SimpleCard'
+import HelpOutlineOutlinedIcon from '@material-ui/icons/HelpOutlineOutlined'
+
+
 const useStyles = makeStyles((theme)=> ({
   root:{
-      minHeight: '100vh',
-      backgroundImage: `url(${'https://source.unsplash.com/random/?chic'})`, 
-      backgroundRepeat: 'no-repeat', 
-      backgroundSize: 'cover', 
-      display: 'flex'
+    minHeight: '100vh',
+    backgroundColor: 'white',
+    backgroundRepeat: 'no-repeat', 
+    backgroundSize: 'cover', 
+    display: 'flex', 
+    width: '100vw'
   }, 
+  fab:{
+    alignSelf: 'flex-end', 
+    position: 'relative', 
+    right: '4.5vw',
+    bottom: '2.5vh',
+    color: 'blue'
+  },
 
 }))
 
@@ -20,6 +31,9 @@ export default function App () {
             <CssBaseline/>
             <Header/>
             <SimpleCard/> 
+            <Fab className={classes.fab} color='primary'>
+                <HelpOutlineOutlinedIcon fontSize='large' style={{color:'white'}}/>
+            </Fab>
         </div>
     )
 }  
